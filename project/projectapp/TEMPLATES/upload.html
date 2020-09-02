@@ -1,0 +1,48 @@
+
+
+{% load static %}
+
+{% block content %}
+<body style="background-image:url({% static 'simple2.JPG' %});">
+<style type="text/css">
+    
+#tr{border:0px;}
+
+  </style>
+
+
+  <b colspan="2" style="padding: 20px;color: navy;font-size: 42px;font-style: italic;font-weight: bold;vertical-align: super;font:bold italic; "><center><u>Video to Text Recognization</u></center></b></u>
+  <center><br><br>
+    <center>
+<table border="10" style="text-decoration-line: 5 ; line-height: 2.5;border-radius: 25px;padding: 15px;background-color: white">
+  <tr style="border:50px solid red;">
+    <td colspan="2" style="padding: 20px;color: navy;font-size: 30px;font-style: italic;font-weight: bold;vertical-align: super;font:bold italic; width: 50%"><center><u>Upload File Here</u></td>
+  </tr>
+
+  <tr id="tr">
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+    <td colspan="2" id="tr" style="padding: 20px;color: navy;font-size: 25px;font-style: italic;font-weight: bold;vertical-align: super;font:bold italic; "><center><u>
+      
+       <input type="file" name="myfile" style="background-color: #4CAF50;border:50px;
+    color: white;padding: 15px 55px;text-decoration:none;display: inline-block;font-size: 16px;border-radius: 5px;display: inline-block;cursor: pointer;color: white;"><br><br>
+    
+        <button type="submit" style="background-color: #4CAF50;border:50px;
+    color: white;padding: 15px 55px;text-decoration:none;display: inline-block;font-size: 16px;border-radius: 5px;display: inline-block;cursor: pointer;color: white;">Upload </button>
+      </u></center></td></form>
+    </u></td>
+
+  </tr>
+  <tr id="tr">
+    <td colspan="2" id="tr" style="padding: 20px;color: navy;font-size: 25px;font-style: italic;font-weight: bold;vertical-align: super;font:bold italic; "><u><center>
+{% if uploaded_file_url %}
+<a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a>
+ {% endif %}
+</center>
+ {% endblock %}
+
+    </u></td></tr></center></td></tr>
+  </tr>
+  </center></td></tr></table>
+</body>
